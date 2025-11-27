@@ -1,0 +1,100 @@
+﻿@model OzzyWeb1.Models.Persona
+
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<div class="container mt-4">
+
+    <h2 class="fw-bold text-primary mb-4">Editar Persona</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="IdPersona" />
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label asp-for="NoDocumento" class="form-label"></label>
+                        <input asp-for="NoDocumento" class="form-control" />
+                        <span asp-validation-for="NoDocumento" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="TipoDocumento" class="form-label"></label>
+                        <input asp-for="TipoDocumento" class="form-control" />
+                        <span asp-validation-for="TipoDocumento" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Genero" class="form-label"></label>
+                        <input asp-for="Genero" class="form-control" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="NombrePersona" class="form-label"></label>
+                        <input asp-for="NombrePersona" class="form-control" />
+                        <span asp-validation-for="NombrePersona" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="EmailPersona" class="form-label"></label>
+                        <input asp-for="EmailPersona" class="form-control" />
+                        <span asp-validation-for="EmailPersona" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="DireccionPersona" class="form-label"></label>
+                        <input asp-for="DireccionPersona" class="form-control" />
+                        <span asp-validation-for="DireccionPersona" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="TelefonoPersona" class="form-label"></label>
+                        <input asp-for="TelefonoPersona" class="form-control" />
+                        <span asp-validation-for="TelefonoPersona" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="IdRol" class="form-label">Rol</label>
+                        <select asp-for="IdRol" class="form-select" asp-items="ViewBag.IdRol"></select>
+                        <span asp-validation-for="IdRol" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Contraseña" class="form-label">Contraseña</label>
+                        <input asp-for="Contraseña" class="form-control" type="password" />
+                        <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Guardar Cambios
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

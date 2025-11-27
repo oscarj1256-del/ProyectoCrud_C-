@@ -1,0 +1,21 @@
+﻿# Visual Studio / IDE
+.vs/
+*.vspscc
+*.vssscc
+
+# Binaries and build
+[Bb]in/
+[Oo]bj/
+*.pdb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Packages
+/Packages
+project.lock.json
+
+# Logs and test results
+*.log
+TestResults/
