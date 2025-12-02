@@ -1,0 +1,62 @@
+﻿@model OzzyWeb1.Models.Tutor
+
+@{
+    ViewData["Title"] = "Crear Tutor";
+}
+
+<div class="container mt-4">
+
+    <h2 class="fw-bold text-primary mb-4">Crear Nuevo Tutor</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label asp-for="Experiencia" class="form-label"></label>
+                        <input asp-for="Experiencia" class="form-control" />
+                        <span asp-validation-for="Experiencia" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Observaciones" class="form-label"></label>
+                        <input asp-for="Observaciones" class="form-control" />
+                        <span asp-validation-for="Observaciones" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="PersonaIdPersona" class="form-label">Persona</label>
+                        <select asp-for="PersonaIdPersona" class="form-select" asp-items="ViewBag.PersonaIdPersona"></select>
+                        <span asp-validation-for="PersonaIdPersona" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Crear Tutor
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

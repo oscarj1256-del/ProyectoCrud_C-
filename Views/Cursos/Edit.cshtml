@@ -1,0 +1,85 @@
+﻿@model OzzyWeb1.Models.Curso
+
+@{
+    ViewData["Title"] = "Editar Curso";
+}
+
+<div class="container mt-4">
+
+    <h2 class="fw-bold text-primary mb-4">Editar Curso</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="IdCurso" />
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label asp-for="Duracion" class="form-label"></label>
+                        <input asp-for="Duracion" class="form-control" />
+                        <span asp-validation-for="Duracion" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="NumeroCurso" class="form-label"></label>
+                        <input asp-for="NumeroCurso" class="form-control" />
+                        <span asp-validation-for="NumeroCurso" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Detalle" class="form-label"></label>
+                        <input asp-for="Detalle" class="form-control" />
+                        <span asp-validation-for="Detalle" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Costo" class="form-label"></label>
+                        <input asp-for="Costo" class="form-control" />
+                        <span asp-validation-for="Costo" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="NivelAprendizaje" class="form-label"></label>
+                        <input asp-for="NivelAprendizaje" class="form-control" />
+                        <span asp-validation-for="NivelAprendizaje" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="CategoriaIdCategoria" class="form-label">Categoría</label>
+                        <select asp-for="CategoriaIdCategoria" class="form-select" asp-items="ViewBag.CategoriaIdCategoria"></select>
+                        <span asp-validation-for="CategoriaIdCategoria" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Guardar cambios
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
