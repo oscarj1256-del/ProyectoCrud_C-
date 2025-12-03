@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore.Authorization;
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
->>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OzzyWeb1.Models;
-<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +11,6 @@ using System.Threading.Tasks;
 namespace OzzyWeb1.Controllers
 {
     [Authorize]
-=======
-
-namespace OzzyWeb1.Controllers
-{
->>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
     public class PersonasController : Controller
     {
         private readonly SabormasterclassContext _context;
