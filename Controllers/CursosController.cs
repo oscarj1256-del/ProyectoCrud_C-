@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
+=======
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,11 +13,16 @@ using OzzyWeb1.Models;
 
 namespace OzzyWeb1.Controllers
 {
+<<<<<<< HEAD
     [Authorize]
     public class CursosController : Controller
     {
 
 
+=======
+    public class CursosController : Controller
+    {
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
         private readonly SabormasterclassContext _context;
 
         public CursosController(SabormasterclassContext context)

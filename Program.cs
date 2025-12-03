@@ -1,9 +1,15 @@
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
 using OzzyWeb1.Models;
 // Imports de Identity
 using Microsoft.AspNetCore.Identity;
 using OzzyWeb1.Data;
 
+=======
+using Microsoft.Extensions.Options;
+using OzzyWeb1.Models;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+<<<<<<< HEAD
 // 1. MVC + Razor Pages
 builder.Services.AddRazorPages();
 
@@ -19,10 +26,16 @@ var conString = builder.Configuration.GetConnectionString("conexion") ??
     throw new InvalidOperationException("Connection string 'conexion' not found");
 
 // 3. DbContext del CRUD
+=======
+var conString = builder.Configuration.GetConnectionString("conexion") ??
+    throw new InvalidOperationException("Connection string 'conexion' not found");
+
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
 builder.Services.AddDbContext<SabormasterclassContext>(options =>
     options.UseMySql(conString, ServerVersion.AutoDetect(conString))
 );
 
+<<<<<<< HEAD
 // 4. DbContext de Identity (NUEVO)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(conString, ServerVersion.AutoDetect(conString)));
@@ -43,6 +56,8 @@ builder.Services
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+=======
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
 
 var app = builder.Build();
 
@@ -55,6 +70,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+<<<<<<< HEAD
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -63,6 +79,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+=======
+app.UseRouting();
+
+app.UseAuthorization();
+
+>>>>>>> 8beaa19510cdd363cf74b1b20e44112eee93838a
 app.MapStaticAssets();
 
 app.MapControllerRoute(
